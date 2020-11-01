@@ -8,9 +8,10 @@ class Box{
     this.y=y;
     this.width=30;
     this.height=40;
+    World.add(world,this.body)
   }
   display(){
     rectMode(CENTER);
-    rect(x,y,width,height);
+    rect(this.x,this.y,this.width,this.height);
   }
 }

@@ -9,7 +9,7 @@ function setup() {
   var canvas = createCanvas(1200,400);
   engine = Engine.create();
   world = engine.world;
-  polygon1=new polgon(200,200,10);
+  polygon1=new polgon(400,200,100);
   b1=new Box(200,200);
   b2=new Box(200,200);
   b3=new Box(200,200);

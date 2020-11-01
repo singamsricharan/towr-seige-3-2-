@@ -8,11 +8,12 @@ class polgon{
       this.r=r;
       this.image=loadImage("polygon.png")
       this.body=Bodies.circle(x,y,r,options);
+      World.add(world,this.body)
+      this.image.scale=0.1;
     }
     display(){
-        image(this.image,this.x,this.y,this.r);
-      ellipseMode(CENTER);
-      ellipse(x,y,r);
+      imageMode(CENTER);
+      image(this.image,this.x,this.y,this.r);
     }
   }
   
