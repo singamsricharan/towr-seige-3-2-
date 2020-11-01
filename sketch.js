@@ -10,13 +10,13 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   polygon1=new polgon(200,200,10);
-  b1=new Box();
-  b2=new Box();
-  b3=new Box();
-  b4=new Box();
-  b5=new Box();
-  b6=new Box();
-  b7=new Box();
+  b1=new Box(200,200);
+  b2=new Box(200,200);
+  b3=new Box(200,200);
+  b4=new Box(200,200);
+  b5=new Box(200,200);
+  b6=new Box(200,200);
+  b7=new Box(200,200);
 }
 
 function draw() {

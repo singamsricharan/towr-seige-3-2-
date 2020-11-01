@@ -1,13 +1,13 @@
 class polgon{
     constructor(x, y, r){
       var options={
-        retitution=0.1,
+        restitution:0.1,
       }
       this.x=x;
       this.y=y;
       this.r=r;
       this.image=loadImage("polygon.png")
-      this.body=bodies.rect(x,y,r,options);
+      this.body=Bodies.circle(x,y,r,options);
     }
     display(){
         image(this.image,this.x,this.y,this.r);
