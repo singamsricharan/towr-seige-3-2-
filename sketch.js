@@ -41,6 +41,7 @@ function draw() {
   ground1.display();
   ground2.display();
   ground3.display();
-  polygon.display();
+  imageMode(CENTER);
+  image(polygonImg,polygon.position.x,polygon.position.y,40,40);
   drawSprites();
 }
