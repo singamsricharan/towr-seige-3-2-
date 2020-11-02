@@ -1,13 +1,14 @@
 class Box{
   constructor(x, y, width, height){
     var options={
-      restitution:0,
+      restitution:1,
+      density:1.2,
     }
     this.body=Bodies.rectangle(x,y,30,40,options);
     this.x=x;
     this.y=y;
-    this.width=30;
-    this.height=40;
+    this.width=width=30;
+    this.height=height=40;
     World.add(world,this.body)
   }
   display(){
