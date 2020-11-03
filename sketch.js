@@ -98,3 +98,8 @@ function mouseDragged(){
 function mouseReleased(){
   chain1.fly();
 }
+function keyPressed(){
+  if (keyCode===32){
+      slingshot.attach(bird.body);
+  }
+}

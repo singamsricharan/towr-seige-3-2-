@@ -10,15 +10,26 @@ class Box{
     this.y=y;
     this.width=30;
     this.height=40;
+    this.Visiblity=255;
     World.add(world,this.body)
   }
   display(){
-    var angle = this.body.angle;
-    push();
-    translate(this.body.position.x, this.body.position.y);
-    rotate(angle);
-    rectMode(CENTER);
-    rect(0,0,30,40);
-    pop();
+    if(this.body.speed<3){
+      var angle = this.body.angle;
+      push();
+      translate(this.body.position.x, this.body.position.y);
+      rotate(angle);
+      rectMode(CENTER);
+      rect(0,0,30,40);
+      pop();
+    }
+    else{
+      push();
+      this.Visiblity = this.Visiblity -5;
+      World.remove(world,this.body);
+      tint(255,this.Visiblity);
+      image(this.image,this.body.position.x,this.body.position.y,50,50);
+      pop();
+    }
   }
 }
