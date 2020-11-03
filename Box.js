@@ -1,18 +1,24 @@
 class Box{
-  constructor(x, y, width, height){
+  constructor(x, y){
     var options={
-      restitution:1,
+      restitution:0.1,
       density:1.2,
+      friction:2.5,
     }
     this.body=Bodies.rectangle(x,y,30,40,options);
     this.x=x;
     this.y=y;
-    this.width=width=30;
-    this.height=height=40;
+    this.width=30;
+    this.height=40;
     World.add(world,this.body)
   }
   display(){
+    var angle = this.body.angle;
+    push();
+    translate(this.body.position.x, this.body.position.y);
+    rotate(angle);
     rectMode(CENTER);
-    rect(this.x,this.y,this.width,this.height);
+    rect(0,0,30,40);
+    pop();
   }
 }
