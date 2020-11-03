@@ -9,7 +9,7 @@ function preload(){
   polygonImg=loadImage("polygon.png")
 }
 function setup() {
-  var canvas = createCanvas(1200,400);
+  var canvas = createCanvas(1000,400);
   engine = Engine.create();
   world = engine.world;
   b1=new Box(480,275);
@@ -28,26 +28,25 @@ function setup() {
   b14=new Box(530,195);
   b15=new Box(560,195);
   b16=new Box(530,155);
-  b17=new Box(900,100);
-  b18=new Box(900,140);
-  b19=new Box(930,140);
-  b20=new Box(870,140);
-  b21=new Box(900,180);
-  b22=new Box(930,180);
-  b23=new Box(960,180);
-  b24=new Box(870,180);
-  b25=new Box(840,180);
-  ground1=new Ground(600,390,1200,20);
+  b17=new Box(800,100);
+  b18=new Box(800,140);
+  b19=new Box(830,140);
+  b20=new Box(770,140);
+  b21=new Box(800,180);
+  b22=new Box(830,180);
+  b23=new Box(860,180);
+  b24=new Box(770,180);
+  b25=new Box(740,180);
+  ground1=new Ground(500,390,1000,20);
   ground2=new Ground(550,305,250,20);
-  ground3=new Ground(900,205,250,20);
+  ground3=new Ground(800,205,250,20);
   var options={
-    density:1.2,
+    density:2.5,
     restitution:0.5,
     friction:1.2,
   }
-  polygon=Bodies.circle(50,200,20,options);
+  polygon=Bodies.circle(200,200,20,options);
   World.add(world,polygon);
-  
   chain1=new SlingShot(this.polygon,{x:200,y:200});
 }
 function draw() {
