@@ -5,8 +5,11 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var polygon,polygonImg;
+var score =0;
+var backgroundcolor;
 function preload(){
-  polygonImg=loadImage("polygon.png")
+  polygonImg=loadImage("polygon.png");
+  getBackgroundImage();
 }
 function setup() {
   var canvas = createCanvas(1000,400);
@@ -50,9 +53,13 @@ function setup() {
   chain1=new SlingShot(this.polygon,{x:200,y:200});
 }
 function draw() {
-  background(56,44,44); 
+  if(backgroundcolor)
+  background(backgroundcolor); 
+  textSize(35);
+  fill("blue");
+  text("score:"+score,750,40);
   Engine.update(engine);
-  fill(135,206,234);
+  fill(135,206,234)
   b1.display();
   b2.display();
   b3.display();
@@ -84,6 +91,31 @@ function draw() {
   b23.display();
   b24.display();
   b25.display();
+  b1.score();
+  b2.score();
+  b3.score();
+  b4.score();
+  b5.score();
+  b6.score();
+  b7.score();
+  b8.score();
+  b9.score();
+  b10.score();
+  b11.score();
+  b12.score();
+  b13.score();
+  b14.score();
+  b15.score();
+  b16.score();
+  b17.score();
+  b18.score();
+  b19.score();
+  b20.score();
+  b21.score();
+  b22.score();
+  b23.score();
+  b24.score();
+  b25.score();
   chain1.display();
   ground1.display();
   ground2.display();
@@ -102,4 +134,20 @@ function keyPressed(){
   if (keyCode===32){
       chain1.attach(this.polygon);
   }
+}
+async function getBackgroundImage(){
+  var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/kolkata");
+  var responseJSON = await response.json();
+  //console.log(responseJSON);
+  //console.log(responseJSON.datetime);
+  var datetime = responseJSON.datetime;
+  var hour = datetime.slice(11,13);
+  console.log(hour);
+  if (hour>=06&&hour<=19){
+      backgroundcolor= (255,255,255);
+  }
+  else {
+      backgroundcolor= (56,44,44);
+  }
+  console.log(backgroundcolor);
 }
